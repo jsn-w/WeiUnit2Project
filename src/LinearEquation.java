@@ -20,11 +20,13 @@ public class LinearEquation {
         str += x2 + ", " + y2 + ")";
         return str;
     }
-    public void calculateSlope () {
+    public double calculateSlope () {
         slope = ((double)(y2) - y1) / ((double)(x2) - x1);
+        return slope;
     }
-    public void calculateB () {
+    public double calculateB () {
         b = y1 - slope * x1;
+        return b;
     }
 
     public String getEquation() {
