@@ -30,6 +30,6 @@ public class LinearEquation {
     }
 
     public String getEquation() {
-        return "y = " + slope + "x + " + b;
+        return "y = " + Math.round(slope * 100) / 100. + "x + " + Math.round(b * 100) / 100.;
     }
 }

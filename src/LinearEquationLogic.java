@@ -34,11 +34,17 @@ public class LinearEquationLogic {
         String coor2 = scan.nextLine();
         this.coordinate2 = coor2;
         parseString(coordinate2, 2);
+        // if both coordinates are equal to each other
+        while (x1 == x2 && y1 == y2) {
+            System.out.print("Enter a distinct coordinate (integers only): ");
+            coor2 = scan.nextLine();
+            this.coordinate2 = coor2;
+            parseString(coordinate2, 2);
+        }
 
         createObject();
         String coorString = linearEquation.lineInfo();
         System.out.println(coorString);
-
         String equation = linearEquation.getEquation();
         System.out.println(equation);
     }
