@@ -19,7 +19,6 @@ public class LinearEquationLogic {
         while (isRunning) {
             inputCoor();
             inputValue();
-            calculateDistance();
             repeatMessage();
         }
     }
@@ -45,7 +44,7 @@ public class LinearEquationLogic {
         createObject();
         String coorString = linearEquation.lineInfo();
         System.out.println(coorString);
-        String equation = linearEquation.getEquation();
+        String equation = "Equation: " + linearEquation.getEquation();
         System.out.println(equation);
     }
     private void inputValue() {
@@ -54,12 +53,7 @@ public class LinearEquationLogic {
         scan.nextLine();
         double slope = linearEquation.calculateSlope();
         double b = linearEquation.calculateB();
-        System.out.println("The point on the line is (" + xValue + ", " + (slope * xValue + b) + ")");
-    }
-
-    private void calculateDistance() {
-        double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-        System.out.println("The distance between the two points is: " + distance);
+        linearEquation.coordinateForX(xValue);
     }
 
     private void repeatMessage() {

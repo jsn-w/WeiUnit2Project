@@ -30,6 +30,21 @@ public class LinearEquation {
     }
 
     public String getEquation() {
-        return "y = " + Math.round(slope * 100) / 100. + "x + " + Math.round(b * 100) / 100.;
+        if (x1 == x2) {
+            return "x = " + x1;
+        }
+        return "y = " + (y2 - y1) + "/" + (x2 - x1) + "x + " + Math.round(b * 100) / 100.;
+    }
+
+    private void calculateDistance() {
+        double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        System.out.println("The distance between the two points is: " + distance);
+    }
+
+    public void coordinateForX(double xValue) {
+        if (x1 == x2) {
+            System.out.println("There is no corresponding point when x = " + xValue);
+        }
+        System.out.println("The point on the line is (" + xValue + ", " + (slope * xValue + b) + ")");
     }
 }
