@@ -12,12 +12,14 @@ public class LinearEquationLogic {
 
     public LinearEquationLogic() {
         scan = new Scanner(System.in);
+        start();
     }
 
     public void start(){
         isRunning = true;
         while (isRunning) {
             inputCoor();
+            System.out.println(linearEquation.lineInfo());
             inputValue();
             repeatMessage();
         }
@@ -42,18 +44,14 @@ public class LinearEquationLogic {
         }
 
         createObject();
-        String coorString = linearEquation.lineInfo();
-        System.out.println(coorString);
-        String equation = "Equation: " + linearEquation.getEquation();
-        System.out.println(equation);
     }
     private void inputValue() {
         System.out.print("Enter x-value: ");
         int xValue = scan.nextInt();
         scan.nextLine();
-        double slope = linearEquation.calculateSlope();
-        double b = linearEquation.calculateB();
-        linearEquation.coordinateForX(xValue);
+        double slope = linearEquation.slope();
+        double b = linearEquation.yIntercept();
+        System.out.println(linearEquation.coordinateForX(xValue));
     }
 
     private void repeatMessage() {
