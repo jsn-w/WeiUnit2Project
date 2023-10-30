@@ -1,8 +1,5 @@
 public class LinearEquation {
-    private int x1;
-    private int y1;
-    private int x2;
-    private int y2;
+    private int x1, y1, x2, y2;
     private double slope;
     private double b;
     public LinearEquation (int x1, int y1, int x2, int y2) {
@@ -38,19 +35,16 @@ public class LinearEquation {
         int numerator = y2 - y1;
         int denominator = x2 - x1;
 
-        if (numerator < 0 && denominator < 0) {
-            numerator = Math.abs(numerator);
-            denominator = Math.abs(denominator);
-        }
-        if (denominator < 0) {
-            denominator *= -1;
+        if (numerator < 0 && denominator < 0 || denominator < 0) {
             numerator *= -1;
+            denominator *= -1;
         }
 
         if (x1 < 0 && x2 < 0) {
-            x1 = Math.abs(x1);
-            x2 = Math.abs(x2);
+            x1 *= -1;
+            x2 *= -1;
         }
+
         if (numerator % denominator == 0) {
             int intSlope = numerator/denominator;
             if (intSlope == 1) {

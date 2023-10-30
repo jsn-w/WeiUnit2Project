@@ -3,10 +3,7 @@ public class LinearEquationLogic {
     private Scanner scan;
     private String coordinate1;
     private String coordinate2;
-    private int x1;
-    private int y1;
-    private int x2;
-    private int y2;
+    private int x1, y1, x2, y2;
     private LinearEquation linearEquation;
     private boolean isRunning;
 
