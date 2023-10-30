@@ -35,7 +35,7 @@ public class LinearEquation {
         int numerator = y2 - y1;
         int denominator = x2 - x1;
 
-        if (numerator < 0 && denominator < 0 || denominator < 0) {
+        if (denominator < 0) {
             numerator *= -1;
             denominator *= -1;
         }
