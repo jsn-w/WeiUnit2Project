@@ -56,7 +56,6 @@ public class LinearEquationLogic {
         System.out.print("Would you like to enter another pair of coordinates?: ");
         String repeatInput = scan.nextLine();
         if (!repeatInput.contains("y")) {
-            System.out.println("here!!!!");
             isRunning = false;
         }
     }
