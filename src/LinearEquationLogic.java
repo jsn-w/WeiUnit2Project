@@ -44,7 +44,7 @@ public class LinearEquationLogic {
     }
     private void inputValue() {
         System.out.print("Enter x-value: ");
-        int xValue = scan.nextInt();
+        double xValue = scan.nextDouble();
         scan.nextLine();
         double slope = linearEquation.slope();
         double b = linearEquation.yIntercept();
@@ -56,6 +56,7 @@ public class LinearEquationLogic {
         System.out.print("Would you like to enter another pair of coordinates?: ");
         String repeatInput = scan.nextLine();
         if (!repeatInput.contains("y")) {
+            System.out.println("here!!!!");
             isRunning = false;
         }
     }
